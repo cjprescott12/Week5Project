@@ -39,8 +39,8 @@ class Menu {
   }
   // selection holds user inputted choice of menu items, use switch to go through each option and do something with the
   // choice. If they type 1 they can create an appointment. If they select 2 they can view an ppointment. If they select
-  // 3 they can delete an appointment. If they dont pick one the code sets the selection value to 0 and it will bring them
-  // outside of the loop. It will alert them that message once out.
+  // 3 they can delete an appointment. If they pick 4 they can display all appointments. If they dont pick one the code sets
+  // the selection value to 0 and it will bring them outside of the loop. It will alert them that message once out.
   start() {
     let selection = this.startMenu();
     while (selection != 0) {
@@ -135,8 +135,8 @@ class Menu {
     let index = prompt(
       "Enter the index of the appointment you wish to delete."
     );
-    if (index > -1 && index < this.selectedAppt.users.length) {
-      this.selectedAppt.users.splice(index, 1);
+    if (index > -1 && index < this.appointments.length) {
+      this.appointments.splice(index, 1);
     }
   }
 }
